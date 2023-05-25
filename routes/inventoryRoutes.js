@@ -31,7 +31,7 @@ router.post('/add', async (req, res) => {
     }
 });
 
-router.post('/update', async (req, res) => {
+router.put('/', async (req, res) => {
     try {
         const result = await inventoryService.updateInventory(req);
         res.status(200).json(result);

@@ -11,7 +11,12 @@ var app = express();
 //middlewares 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors(   ))
+
+const allowedOrigins = ['http://localhost:4200', 'http://143.110.184.160']
+
+app.use(cors({
+    origin: allowedOrigins
+}))
 
 
 app.get('/', (req, res) => {
